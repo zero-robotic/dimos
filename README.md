@@ -331,5 +331,3 @@ Check our language interop examples:
 - [C++](examples/language-interop/cpp/)
 - [Lua](examples/language-interop/lua/)
 - [TypeScript](examples/language-interop/ts/)
-
-Single-command local verification (sync + fast tests): `bash scripts/verify.sh`.
