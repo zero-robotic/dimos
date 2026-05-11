@@ -379,6 +379,20 @@ CI asserts the file is current — if it's stale, CI fails.
 
 ---
 
+## Local verification (`scripts/verify.sh`)
+
+For a single command that matches **fast** pytest defaults (`pyproject.toml` markers exclude `slow`, `tool`, `mujoco`):
+
+```bash
+bash scripts/verify.sh
+```
+
+This runs `uv sync --extra all` then `uv run pytest dimos`. It does **not** replace organization CI (`.github/workflows/ci.yml` — self-hosted `ci-complete`, coverage, mypy, ROS toolchain). Use `scripts/verify.sh` for local loops and agent workflows; PRs still wait on upstream CI.
+
+See also: `docs/development/testing.md`, `./bin/pytest-fast`.
+
+---
+
 ## Further Reading
 
 - Module system: `docs/usage/modules.md`

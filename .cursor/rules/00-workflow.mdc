@@ -1,0 +1,14 @@
+---
+description: DimOS contributor workflow for Cursor Agent
+alwaysApply: true
+---
+
+# DimOS agent workflow
+
+- Do not push to `main` or `dev` directly. Use feature branches; **PRs target `dev`** (see `AGENTS.md` Git Workflow).
+- Do not `git push --force` to shared remote branches.
+- Before declaring work ready: run **`bash scripts/verify.sh`** (fast tests). Do not weaken or skip it to "go green."
+- Do not commit secrets (`.env`, API keys, tokens). Follow `.gitignore`.
+- Prefer minimal, focused diffs; avoid unrelated refactors.
+- If `AGENTS.md` or other docs already exist, **append** workflow notes; do not replace wholesale.
+- Git remotes (recommended): **`upstream`** → canonical **`dimensionalOS/dimos`**; **`origin`** → your fork (e.g. **`zero-robotic/dimos`**). Push branches to `origin`; open PRs into **`dev`** on the canonical repo.
